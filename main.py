@@ -6,6 +6,16 @@ app = FastAPI()  # Instancia de la clase FastAPI
 app.title = "Mi primera aplicacion con FastAPI"  # Titulo de la API
 app.version = "0.0.1"  # Version de la API
 
+movies = [
+    {
+        "id" : 1,
+        "title" : "Spiderman",
+        "overview" : "Un adolescente que es mordido por una araña y adquiere poderes de araña",
+        "year" : 2002,
+        "rating" : 7.3,
+        "category" : "Accion"
+    },
+]
 
 @app.get("/", tags=["Home"])  # Decorador para definir la ruta de la API
 def home():  # Funcion que se ejecutara al ingresar a la ruta
@@ -13,22 +23,5 @@ def home():  # Funcion que se ejecutara al ingresar a la ruta
 
 
 @app.get("/movies", tags=["Home"])
-def movies():
-    return HTMLResponse(
-        """
-        <html>
-            <head>
-                <title>Movies</title>
-            </head>
-            <body>
-                <h1>Movies</h1>
-                <ul>
-                    <li>Avengers: Endgame</li>
-                    <li>Spiderman: No way home</li>
-                    <li>Black Widow</li>
-                    <li>Shang-Chi</li>
-                </ul>
-            </body>
-        </html>
-        """
-    )
+def Getmovies():
+    return movies
