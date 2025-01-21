@@ -6,8 +6,8 @@ Este es un proyecto básico utilizando FastAPI.
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/tu_usuario/tu_repositorio.git
-    cd tu_repositorio
+    git clone https://github.com/Nefta11/fastAPI-Curso.git
+    cd fastAPI-Curso
     ```
 
 2. Crea un entorno virtual y actívalo:
