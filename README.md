@@ -13,7 +13,7 @@ Este es un proyecto básico utilizando FastAPI.
 2. Crea un entorno virtual y actívalo:
     ```bash
     python -m venv env
-    source env/bin/activate  # En Windows usa `env\Scripts\activate`
+    .\venv\Scripts\activate  # En Windows usa `env\Scripts\activate`
     ```
 
 3. Instala las dependencias:
