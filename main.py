@@ -13,7 +13,7 @@ movies = [
         "overview": "Un adolescente que es mordido por una araña y adquiere poderes de araña",
         "year": 2002,
         "rating": 7.3,
-        "category": "Accion",
+        "category": "Terror",
     },
     {
         "id": 2,
@@ -36,9 +36,18 @@ def Getmovies():
     return movies
 
 
-@app.get("/movies/{movie_id}", tags=["Home"])
+@app.get("/movies/{movie_id}", tags=["Home"])  # Parametro de la ruta: Son valores que se envian a traves de la URL y se definen entre llaves
 def Getmovies(id: int):
     for movie in movies:
         if movie["id"] == id:
+            return movie
+    return {"message": "Pelicula no encontrada"}
+
+
+# Parametros Query: Es una forma de enviar parametros a la API a traves de la URL
+@app.get("/movies/", tags=["Home"])
+def get_movie_by_category(category: str):
+    for movie in movies:
+        if movie["category"] == category:
             return movie
     return {"message": "Pelicula no encontrada"}
